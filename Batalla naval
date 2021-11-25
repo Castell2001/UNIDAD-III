@@ -1,0 +1,90 @@
+//Juego, jugaor, computador,tablero 
+
+
+Jugador jugador_persona;
+Computador jugador_computadora;
+Tablero tablero_final;
+Tablero tablero_final2;
+
+}script{
+ 
+void Juego::informacion_Tableros(){
+ 
+jugador_persona.elaboracion_tablero_jugador();
+jugador_computadora.ingreso_nave_tablero_computador();
+ 
+}
+ 
+ 
+ 
+/*Función que realiza los disparos del usuario y del computador*/
+void Juego::disparos_jugador(char tablero_jugador[][15], char tablero_computador[][15]){
+ 
+	int i,j;
+	char tablero_disparo_usuario[15][15];
+	char tablero_disparo_computador[15][15];
+ 
+	int naves_disponibles_computador=8;
+	int naves_disponibles_usuario=8;
+ 
+	int Porta_aviones_usuario=5;
+	int Porta_aviones_computador=5;
+ 
+	int Primer_buque_usuario=4;
+	int Segundo_buque_usuario=4;
+	int Primer_buque_computador=4;
+	int Segundo_buque_computador=4;
+ 
+	int Primer_submarino_usuario=3;
+	int Segundo_submarino_usuario=3;
+	int Primer_submarino_computador=3;
+	int Segundo_submarino_computador=3;
+ 
+	int Primera_lancha_usuario=1;
+	int Segunda_lancha_usuario=1;
+	int Tercera_lancha_usuario=1;
+	int Primera_lancha_computador=1;
+	int Segunda_lancha_computador=1;
+	int Tercera_lancha_computador=1;
+ 
+	int total_porta_aviones=0;
+	int total_buques=0;
+ 
+	int coordenada_x=0;
+	int coordenada_y=0;
+	int jugar=0,a=1;
+ 
+		for(i=0;i<15;i++){
+			for(j=0;j<15;j++){
+    		tablero_disparo_usuario[i][j]='*';
+    		}
+		}
+	/*Tablero del computador*/
+	for(i=0;i<15;i++){
+  		for(j=0;j<15;j++){
+			tablero_disparo_computador[i][j]='*';
+    		}
+		}
+ 
+ 
+	 while(jugar==0){
+     	while(a!=0){
+ 
+	std::cout << "\n..:: Turno del jugador ::..\n";
+    std::cout << "Ingrese las coordenadas para atacar a su enemigo: ";
+    scanf("1,2",&coordenada1,&coordenada2);
+ 
+    int coordenada_ataque1=coordenada1-1;
+	int coordenada_ataque2=coordenada2-1;
+ 
+ 
+			if (tablero_computador[coordenada_ataque_1][coordenada_ataque_2]=='P'){
+				std::cout << "Se ha dañado el Porta Aviones del Computador\n";
+				tablero_disparo_computador[coordenada_ataque_1][coordenada_ataque_2]='P';
+				Porta_aviones_computador--;
+ 
+ 
+			}
+		}
+	}
+}
